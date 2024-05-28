@@ -1,0 +1,54 @@
+spring:
+    application:
+        name: SECURITY-BASIC
+
+    datasource:
+        url: jdbc:mysql://localhost:3306/auth
+        username: root
+        password: root
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: nikhilkumargoud978@gmail.com
+        password: pdew ijua ribo onbh
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+
+server:
+    port: 9095
+
+
+logging:
+    level:
+        org:
+            springframework:
+                cloud:
+                    config: DEBUG
+        com:
+            netflix:
+                eureka: DEBUG
+
+eureka:
+    client:
+        service-url:
+            defaultzone: http://localhost:8761/eureka/
+#        register-with-eureka: true
+#        fetch-registry: true
+#        healthcheck:
+#            enabled: true
+    instance:
+        preferIpAddress: true
